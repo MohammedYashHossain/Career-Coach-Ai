@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeCoach AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>👩‍💻 CodeCoach AI</h1>
+  <div class="card">
+    <label for="year">What year are you in college?</label>
+    <select id="year">
+      <option>Freshman</option>
+      <option>Sophomore</option>
+      <option>Junior</option>
+      <option>Senior</option>
+    </select>
+
+    <label for="languages">What programming languages do you know?</label>
+    <input type="text" id="languages" placeholder="e.g. Python, Java, C++" />
+
+    <label for="comfort">Rate your DSA comfort (1–5)</label>
+    <select id="comfort">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+
+    <label for="projects">Have you done any projects/internships?</label>
+    <select id="projects">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <label for="goal">What is your career goal?</label>
+    <select id="goal">
+      <option>Software Engineering</option>
+      <option>Data Science</option>
+      <option>Cybersecurity</option>
+      <option>UI/UX</option>
+      <option>Cloud/DevOps</option>
+    </select>
+
+    <button onclick="generateAdvice()">Get My AI Advice 🚀</button>
+
+    <div class="output" id="output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
