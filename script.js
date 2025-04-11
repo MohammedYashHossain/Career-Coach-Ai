@@ -1,23 +1,55 @@
-function generateAdvice() {
-    const year = document.getElementById("year").value;
-    const languages = document.getElementById("languages").value;
-    const comfort = document.getElementById("comfort").value;
-    const projects = document.getElementById("projects").value;
-    const goal = document.getElementById("goal").value;
-  
-    const advice = `Hey ${year}!
-  
-  You're off to a great start toward your career goal in ${goal}. Since you know ${languages} and rated your DSA comfort as ${comfort}/5, here’s some advice:
-  
-  1. Keep sharpening your problem-solving skills using LeetCode and HackerRank.
-  2. ${projects === "Yes" ? "Continue building projects and try contributing to open-source." : "Start a small project to apply your skills and build confidence."}
-  3. Learn more about ${goal}-specific tools and workflows.
-  
-  Top resources:
-  - CS50 by Harvard
-  - roadmap.sh
-  
-  Keep pushing forward. You've got this! 💪`;
-  
-    document.getElementById("output").innerText = advice;
-  }
+function navigateToMajor() {
+  const industry = document.getElementById("industry").value;
+  window.location.href = `${industry}.html`;
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const rocket = document.getElementById("rocket");
+  setTimeout(() => rocket?.remove(), 2000);
+});
+
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80, density: { enable: true, value_area: 800 } },
+    color: { value: "#ffffff" },
+    shape: {
+      type: "circle",
+      stroke: { width: 0, color: "#000000" },
+      polygon: { nb_sides: 5 }
+    },
+    opacity: { value: 0.5, random: false },
+    size: { value: 3, random: true },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#ffffff",
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 4,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "repulse" },
+      onclick: { enable: true, mode: "push" },
+      resize: true
+    },
+    modes: {
+      grab: { distance: 400, line_linked: { opacity: 1 } },
+      bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+      repulse: { distance: 200, duration: 0.4 },
+      push: { particles_nb: 4 },
+      remove: { particles_nb: 2 }
+    }
+  },
+  retina_detect: true
+});
