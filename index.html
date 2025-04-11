@@ -3,51 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CodeCoach AI</title>
+  <title>CareerCoach AI</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-  <h1>👩‍💻 CodeCoach AI</h1>
-  <div class="card">
-    <label for="year">What year are you in college?</label>
-    <select id="year">
-      <option>Freshman</option>
-      <option>Sophomore</option>
-      <option>Junior</option>
-      <option>Senior</option>
-    </select>
+  <div id="particles-js"></div>
+  <div id="rocket">🚀</div>
 
-    <label for="languages">What programming languages do you know?</label>
-    <input type="text" id="languages" placeholder="e.g. Python, Java, C++" />
+  <div id="main">
+    <h1>🚀 CareerCoach AI</h1>
+    <div class="card">
+      <label for="year">What year are you in college?</label>
+      <select id="year">
+        <option value="Freshman">Freshman</option>
+        <option value="Sophomore">Sophomore</option>
+        <option value="Junior">Junior</option>
+        <option value="Senior">Senior</option>
+      </select>
 
-    <label for="comfort">Rate your DSA comfort (1–5)</label>
-    <select id="comfort">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
+      <label for="industry">What industry are you interested in?</label>
+      <select id="industry">
+        <option value="tech">Tech</option>
+        <option value="business">Business</option>
+        <option value="healthcare">Healthcare</option>
+        <option value="engineering">Engineering</option>
+        <option value="education">Education</option>
+        <option value="media">Media/Entertainment</option>
+        <option value="law">Law</option>
+        <option value="government">Government/Public Service</option>
+      </select>
 
-    <label for="projects">Have you done any projects/internships?</label>
-    <select id="projects">
-      <option>Yes</option>
-      <option>No</option>
-    </select>
-
-    <label for="goal">What is your career goal?</label>
-    <select id="goal">
-      <option>Software Engineering</option>
-      <option>Data Science</option>
-      <option>Cybersecurity</option>
-      <option>UI/UX</option>
-      <option>Cloud/DevOps</option>
-    </select>
-
-    <button onclick="generateAdvice()">Get My AI Advice 🚀</button>
-
-    <div class="output" id="output"></div>
+      <button onclick="navigateToMajor()">Let's Go! 🎯</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
