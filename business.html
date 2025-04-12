@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerCoach AI - Business</title>
+  <link rel="stylesheet" href="business.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <div id="resume-review">
+    <button id="resumeBtn">📄 Resume Review</button>
+  </div>
+
+  <h1>💼 Business Career Path</h1>
+  <div class="card">
+    <form id="business-form">
+      <label for="concentration">What's your business concentration?</label>
+      <select id="concentration" required>
+        <option value="">Select one</option>
+        <option>Finance</option>
+        <option>Business Analytics</option>
+        <option>Economics</option>
+        <option>Marketing</option>
+        <option>Accounting</option>
+        <option>Management</option>
+        <option>Supply Chain</option>
+        <option>Entrepreneurship</option>
+      </select>
+
+      <label for="internships">How many internships have you had?</label>
+      <select id="internships">
+        <option value="">Select one</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2+">2 or more</option>
+      </select>
+
+      <label for="coursework">Any relevant business coursework?</label>
+      <input type="text" id="coursework" placeholder="e.g. Financial Accounting, Data Analytics" />
+
+      <label for="goal">What's your short-term goal?</label>
+      <select id="goal">
+        <option value="">Select one</option>
+        <option>Get an internship</option>
+        <option>Land a full-time job</option>
+        <option>Apply to grad school</option>
+        <option>Explore career paths</option>
+      </select>
+
+      <button type="submit">Generate Report 📊</button>
+    </form>
+
+    <div id="report-output"></div>
+  </div>
+
+  <script src="business.js"></script>
+</body>
+</html>
