@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerCoach AI - Healthcare</title>
+  <link rel="stylesheet" href="healthcare.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="healthcare.js" defer></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <h1>🩺 Healthcare Career Path</h1>
+  <div class="card">
+    <form id="healthcare-form">
+      <label for="field">Your Healthcare Field:</label>
+      <select id="field">
+        <option>Nursing</option>
+        <option>Pre-Med</option>
+        <option>Public Health</option>
+        <option>Pharmacy</option>
+        <option>Physician Assistant</option>
+        <option>Medical Technology</option>
+        <option>Radiology</option>
+        <option>Surgical Technician</option>
+      </select>
+
+      <label for="clinical">Any clinical/shadowing experience?</label>
+      <select id="clinical">
+        <option value="0">None</option>
+        <option value="1">Some (1-2 experiences)</option>
+        <option value="2+">Extensive (3+ experiences)</option>
+      </select>
+
+      <label for="courses">Relevant science courses completed:</label>
+      <input type="text" id="courses" placeholder="e.g. Anatomy, Physiology, Microbiology" />
+
+      <label for="goal">Your short-term goal:</label>
+      <select id="goal">
+        <option>Enter clinical rotations</option>
+        <option>Apply to med/grad school</option>
+        <option>Find a healthcare internship</option>
+        <option>Start research in healthcare</option>
+      </select>
+
+      <button type="submit">Generate Report 📊</button>
+    </form>
+
+    <div id="report-output"></div>
+
+    <div class="resume-below">
+      <button id="resumeBtn">📄 Resume Review</button>
+    </div>
+  </div>
+</body>
+</html>
