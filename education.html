@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerCoach AI - Education</title>
+  <link rel="stylesheet" href="education.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="education.js" defer></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <h1>📚 Education Career Path</h1>
+  <div class="card">
+    <form id="education-form">
+      <label for="role">What type of educator are you pursuing?</label>
+      <select id="role">
+        <option>Elementary School Teacher</option>
+        <option>Middle School Teacher</option>
+        <option>High School Teacher</option>
+        <option>College Professor</option>
+        <option>Special Education</option>
+        <option>Education Administration</option>
+      </select>
+
+      <label for="experience">Do you have any teaching or tutoring experience?</label>
+      <select id="experience">
+        <option value="0">No</option>
+        <option value="1">Yes - Some tutoring/volunteering</option>
+        <option value="2">Yes - Extensive classroom or formal experience</option>
+      </select>
+
+      <label for="subjects">What subjects are you interested in teaching?</label>
+      <input type="text" id="subjects" placeholder="e.g. English, Math, Special Ed" />
+
+      <label for="goal">Your short-term goal:</label>
+      <select id="goal">
+        <option>Apply to teaching positions</option>
+        <option>Complete student teaching</option>
+        <option>Prepare for certification exams</option>
+        <option>Apply to master's/PhD programs</option>
+      </select>
+
+      <button type="submit">Generate Report 📊</button>
+    </form>
+
+    <div id="report-output"></div>
+
+    <div class="resume-below">
+      <button id="resumeBtn">📄 Resume Review</button>
+    </div>
+  </div>
+</body>
+</html>
