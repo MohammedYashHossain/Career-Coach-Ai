@@ -84,4 +84,13 @@ body {
     height: 100%;
     z-index: -1; /* ✅ keep it in the backruzz */
   }
+/* added luh side scrolla */
+  html, body 
+  {
+    width: 100%;
+    overflow-x: auto; 
+  }
   
+  .card {
+    overflow-x: auto; 
+  }
