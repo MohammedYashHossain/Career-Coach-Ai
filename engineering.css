@@ -83,12 +83,8 @@ body {
     z-index: 0;
   }
   /* added luh side scrolla */
-  html, body 
-  {
+  html, body {
     width: 100%;
-    overflow-x: auto; 
-  }
-  
-  .card {
-    overflow-x: auto; 
+    overflow-x: hidden;   
+    overflow-y: auto;     
   }
