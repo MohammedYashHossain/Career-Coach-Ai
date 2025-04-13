@@ -1,48 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const grade = localStorage.getItem('userGrade');
-    const form = document.getElementById('business-form');
-    const output = document.getElementById('report-output');
+document.getElementById("business-form").addEventListener("submit", function(e) {
+    e.preventDefault();
   
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+    const concentration = document.getElementById("concentration").value;
+    const internships = document.getElementById("internships").value;
+    const coursework = document.getElementById("coursework").value;
+    const goal = document.getElementById("goal").value;
   
-      const concentration = document.getElementById('concentration').value;
-      const internships = document.getElementById('internships').value;
-      const coursework = document.getElementById('coursework').value;
-      const goal = document.getElementById('goal').value;
-  
-      let level = 'beginner';
-      if (grade === 'Junior' || grade === 'Senior') {
-        level = 'intermediate';
-      }
-  
-      const report = `
-  Grade Level: ${grade}
+    const report = `
   Concentration: ${concentration}
   Internships: ${internships}
-  Relevant Coursework: ${coursework}
-  Short-term Goal: ${goal}
+  Coursework: ${coursework}
+  Goal: ${goal}
   
-  Your personalized career report:
+  📊 Recommendations:
+  - ${
+      internships === "0"
+        ? "Start looking for internships on LinkedIn, Handshake, and your school's career portal."
+        : "Leverage your past internships and focus on higher-tier positions."
+    }
+  - Customize your resume with coursework related to ${concentration}.
+  - Research industry-specific tools (Excel, SQL, Tableau, etc.)
+  - Practice case studies or behavioral interviews to align with your ${goal} goal.
+    `;
   
-  As a ${grade} focused on ${concentration}, you're on the ${level === 'beginner' ? 'early' : 'advanced'} path to success. ${
-        internships === '0'
-          ? 'Start looking for internship opportunities using platforms like LinkedIn, Handshake, and company portals.'
-          : 'Leverage your existing internship experience to aim for higher-level roles or leadership in student orgs.'
-      }
+    document.getElementById("report-output").innerText = report;
+  });
   
-  Recommended next steps:
-  - Sharpen your resume with specific keywords from your concentration.
-  - Attend career fairs or networking events on campus.
-  - Research ${goal === 'Apply to grad school' ? 'top grad programs and prep for the GMAT/GRE.' : goal}.
-  - Practice case interviews and learn business fundamentals relevant to ${concentration}.
-  
-  You've got this! 🔥
-      `;
-  
-      output.textContent = report;
-    });
-  
+  // Load particles.js
+  document.addEventListener("DOMContentLoaded", function () {
     particlesJS("particles-js", {
       particles: {
         number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -82,4 +67,3 @@ document.addEventListener('DOMContentLoaded', () => {
       retina_detect: true
     });
   });
-  

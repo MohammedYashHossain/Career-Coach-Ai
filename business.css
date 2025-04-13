@@ -1,50 +1,23 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  body {
+body {
     background: #000;
     color: white;
-    min-height: 100vh;
-    padding: 2rem;
+    font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
     position: relative;
+    overflow: hidden;
   }
   
-  #particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 600px;
     width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-  
-  #resume-review {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-  
-  #resumeBtn {
-    background: white;
-    color: black;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: transform 0.4s ease;
-  }
-  
-  #resumeBtn:hover {
-    transform: scale(1.1);
+    z-index: 1;
   }
   
   h1 {
@@ -53,54 +26,41 @@
     z-index: 1;
   }
   
-  .card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 2rem;
-    max-width: 600px;
-    width: 100%;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
-    z-index: 1;
-  }
-  
   label {
-    display: block;
     margin-top: 1rem;
-    font-weight: 600;
+    display: block;
+    font-weight: bold;
   }
   
-  input, select {
+  select, input {
     width: 100%;
     padding: 0.5rem;
     margin-top: 0.5rem;
-    margin-bottom: 1rem;
     border-radius: 8px;
     border: none;
     font-size: 1rem;
+    background: #f0f0f0;
+    color: black;
+    appearance: none;
+    -webkit-appearance: none;
   }
   
-  button[type='submit'] {
+  button {
+    margin: 1.5rem auto 0;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.05rem;
-    transition: transform 0.4s ease, background 0.3s ease;
-    width: 80%;
-    background: white;
-    color: black;
+    padding: 0.6rem 2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     border-radius: 8px;
-    padding: 0.6rem;
-    margin-top: 1rem;
-    cursor: pointer;
     border: none;
+    cursor: pointer;
+    background: white;
+    color: black;
+    transition: transform 0.4s ease;
   }
   
-  button[type='submit']:hover {
+  button:hover {
     transform: scale(1.1);
-    background: #ddd;
   }
   
   #report-output {
@@ -111,13 +71,16 @@
     white-space: pre-wrap;
   }
   
-  select {
-    appearance: none;
-    -webkit-appearance: none;
-    background-color: #f0f0f0;
-    color: #000 !important;
-    border: none;
-    padding: 0.5rem;
-    font-size: 1rem;
+  .resume-below {
+    text-align: center;
+    margin-top: 1.5rem;
   }
-    
+  
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
