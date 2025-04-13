@@ -1,0 +1,56 @@
+"<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerCoach AI - Engineering</title>
+  <link rel="stylesheet" href="engineering.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <h1>🛠️ Engineering Career Path</h1>
+  <div class="card">
+    <form id="engineering-form">
+      <label for="discipline">Your Engineering Discipline:</label>
+      <select id="discipline">
+        <option>Mechanical</option>
+        <option>Electrical</option>
+        <option>Computer</option>
+        <option>Civil</option>
+        <option>Chemical</option>
+        <option>Industrial</option>
+      </select>
+
+      <label for="internships">How many internships?</label>
+      <select id="internships">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2+">2+</option>
+      </select>
+
+      <label for="projects">What type of projects have you done?</label>
+      <input type="text" id="projects" placeholder="e.g. robotics, CAD design, circuits" />
+
+      <label for="goal">Your short-term goal:</label>
+      <select id="goal">
+        <option>Secure an internship</option>
+        <option>Land a full-time role</option>
+        <option>Get into grad school</option>
+        <option>Join a research lab</option>
+      </select>
+
+      <button type="submit">Generate Report 📊</button>
+    </form>
+
+    <div id="report-output"></div>
+
+    <div class="resume-below">
+      <button id="resumeBtn">📄 Resume Review</button>
+    </div>
+  </div>
+
+  <script src="engineering.js"></script>
+</body>
+</html>
