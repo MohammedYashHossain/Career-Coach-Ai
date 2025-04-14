@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerCoach AI - Law</title>
+  <link rel="stylesheet" href="law.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="law.js" defer></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <h1>⚖️ Law Career Path</h1>
+  <div class="card">
+    <form id="law-form">
+      <label for="interest">Legal field you're interested in:</label>
+      <select id="interest">
+        <option>Corporate Law</option>
+        <option>Criminal Law</option>
+        <option>Constitutional Law</option>
+        <option>Immigration Law</option>
+        <option>Environmental Law</option>
+        <option>Family Law</option>
+        <option>Intellectual Property</option>
+      </select>
+
+      <label for="prep">What stage of law preparation are you in?</label>
+      <select id="prep">
+        <option>Pre-Law Undergraduate</option>
+        <option>Studying for LSAT</option>
+        <option>Accepted to Law School</option>
+        <option>Currently in Law School</option>
+      </select>
+
+      <label for="experience">Do you have any law-related experience?</label>
+      <select id="experience">
+        <option value="0">None</option>
+        <option value="1">Internship or shadowing</option>
+        <option value="2">Formal experience (e.g. paralegal, mock trial)</option>
+      </select>
+
+      <label for="goal">Your short-term goal:</label>
+      <select id="goal">
+        <option>Get a legal internship</option>
+        <option>Build a law school application</option>
+        <option>Study for the LSAT</option>
+        <option>Network with legal professionals</option>
+      </select>
+
+      <button type="submit">Generate Report 📊</button>
+    </form>
+
+    <div id="report-output"></div>
+
+    <div class="resume-below">
+      <button id="resumeBtn">📄 Resume Review</button>
+    </div>
+  </div>
+</body>
+</html>
