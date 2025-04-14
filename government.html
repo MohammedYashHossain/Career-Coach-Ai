@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerCoach AI - Government & Public Service</title>
+  <link rel="stylesheet" href="government.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="government.js" defer></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <h1>🏛️ Government & Public Service Career Path</h1>
+  <div class="card">
+    <form id="gov-form">
+      <label for="track">Area you're most interested in:</label>
+      <select id="track">
+        <option>Public Policy</option>
+        <option>Local Government</option>
+        <option>Federal Government</option>
+        <option>Law Enforcement</option>
+        <option>Nonprofit Sector</option>
+        <option>Community Advocacy</option>
+      </select>
+
+      <label for="education">What level of education are you at?</label>
+      <select id="education">
+        <option>High School</option>
+        <option>Associate's Degree</option>
+        <option>Bachelor's Degree</option>
+        <option>Master's/Graduate Program</option>
+      </select>
+
+      <label for="experience">Relevant experience in public service?</label>
+      <select id="experience">
+        <option value="0">None yet</option>
+        <option value="1">Volunteer or community involvement</option>
+        <option value="2">Internship or government job</option>
+      </select>
+
+      <label for="goal">Your short-term goal:</label>
+      <select id="goal">
+        <option>Apply for public sector internships</option>
+        <option>Prepare for civil service exams</option>
+        <option>Network in government agencies</option>
+        <option>Launch a community initiative</option>
+      </select>
+
+      <button type="submit">Generate Report 📊</button>
+    </form>
+
+    <div id="report-output"></div>
+
+    <div class="resume-below">
+      <button id="resumeBtn">📄 Resume Review</button>
+    </div>
+  </div>
+</body>
+</html>
