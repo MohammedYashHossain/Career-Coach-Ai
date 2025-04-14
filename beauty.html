@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerCoach AI - Beauty & Fashion</title>
+  <link rel="stylesheet" href="beauty.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="beauty.js" defer></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <h1>💄 Beauty & Fashion Career Path</h1>
+  <div class="card">
+    <form id="beauty-form">
+      <label for="track">What path are you interested in?</label>
+      <select id="track">
+        <option>Makeup Artist</option>
+        <option>Fashion Designer</option>
+        <option>Hair Stylist</option>
+        <option>Stylist / Personal Shopper</option>
+        <option>Beauty Influencer</option>
+        <option>Fashion Merchandising</option>
+      </select>
+
+      <label for="portfolio">Do you have a portfolio or lookbook?</label>
+      <select id="portfolio">
+        <option value="0">Not yet</option>
+        <option value="1">In progress</option>
+        <option value="2">Yes, posted online</option>
+      </select>
+
+      <label for="skills">What platforms or tools do you use?</label>
+      <input type="text" id="skills" placeholder="e.g. Instagram, TikTok, Canva, Adobe Illustrator" />
+
+      <label for="goal">Your short-term goal:</label>
+      <select id="goal">
+        <option>Gain more exposure or clients</option>
+        <option>Get an internship or assistant job</option>
+        <option>Grow my social media presence</option>
+        <option>Apply to beauty/fashion school</option>
+      </select>
+
+      <button type="submit">Generate Report 📊</button>
+    </form>
+
+    <div id="report-output"></div>
+
+    <div class="resume-below">
+      <button id="resumeBtn">📄 Resume Review</button>
+    </div>
+  </div>
+</body>
+</html>
