@@ -1,0 +1,88 @@
+body {
+    background: linear-gradient(135deg, #ffa726, #fb8c00); /* Orange gradient */
+    color: white;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  label {
+    margin-top: 1rem;
+    display: block;
+    font-weight: bold;
+  }
+  
+  select, input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    background: #fff3e0;  /* light orange-tan for input fields */
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  
+  button {
+    margin: 1.5rem auto 0;
+    display: block;
+    padding: 0.6rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    color: black;
+    transition: transform 0.4s ease;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+  }
+  
+  #report-output {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    white-space: pre-wrap;
+  }
+  
+  .resume-below {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  

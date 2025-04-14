@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerCoach AI - Media & Entertainment</title>
+  <link rel="stylesheet" href="media.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="media.js" defer></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <h1>🎬 Media & Entertainment Career Path</h1>
+  <div class="card">
+    <form id="media-form">
+      <label for="track">What area are you focused on?</label>
+      <select id="track">
+        <option>Film/TV Production</option>
+        <option>Journalism</option>
+        <option>Marketing/PR</option>
+        <option>Social Media Content</option>
+        <option>Music Industry</option>
+        <option>Visual Effects/Animation</option>
+      </select>
+
+      <label for="portfolio">Do you have a portfolio or work samples?</label>
+      <select id="portfolio">
+        <option value="0">Not yet</option>
+        <option value="1">In progress</option>
+        <option value="2">Yes, published online</option>
+      </select>
+
+      <label for="tools">Tools/skills you're learning or using:</label>
+      <input type="text" id="tools" placeholder="e.g. Premiere Pro, Canva, Photoshop" />
+
+      <label for="goal">Your short-term goal:</label>
+      <select id="goal">
+        <option>Get an internship</option>
+        <option>Grow an online presence</option>
+        <option>Land a freelance gig</option>
+        <option>Pitch creative projects</option>
+      </select>
+
+      <button type="submit">Generate Report 📊</button>
+    </form>
+
+    <div id="report-output"></div>
+
+    <div class="resume-below">
+      <button id="resumeBtn">📄 Resume Review</button>
+    </div>
+  </div>
+</body>
+</html>
