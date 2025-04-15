@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerCoach AI - Tech</title>
+  <link rel="stylesheet" href="tech.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="tech.js" defer></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <h1>💻 Tech Career Path</h1>
+  <div class="card">
+    <form id="tech-form">
+      <label for="track">What tech path are you pursuing?</label>
+      <select id="track">
+        <option>Software Engineering</option>
+        <option>Data Science</option>
+        <option>Cybersecurity</option>
+        <option>UX/UI Design</option>
+        <option>DevOps / Cloud</option>
+        <option>AI / Machine Learning</option>
+        <option>Product Management</option>
+      </select>
+
+      <label for="experience">Coding experience level:</label>
+      <select id="experience">
+        <option>Beginner (0–1 years)</option>
+        <option>Intermediate (1–3 years)</option>
+        <option>Advanced (3+ years)</option>
+      </select>
+
+      <label for="tools">What tech/tools are you currently using?</label>
+      <input type="text" id="tools" placeholder="e.g. Python, React, Figma, AWS" />
+
+      <label for="goal">Your short-term goal:</label>
+      <select id="goal">
+        <option>Land an internship</option>
+        <option>Contribute to open source</option>
+        <option>Prepare for coding interviews</option>
+        <option>Launch a personal project</option>
+      </select>
+
+      <button type="submit">Generate Report 📊</button>
+    </form>
+
+    <div id="report-output"></div>
+
+    <div class="resume-below">
+      <button id="resumeBtn">📄 Resume Review</button>
+    </div>
+  </div>
+</body>
+</html>
