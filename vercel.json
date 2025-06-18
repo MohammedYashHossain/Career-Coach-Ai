@@ -6,7 +6,15 @@
       "use": "@vercel/node"
     },
     {
-      "src": "**/*",
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.js",
       "use": "@vercel/static"
     }
   ],
@@ -14,9 +22,6 @@
     {
       "src": "/api/(.*)",
       "dest": "backend/app.js"
-    },
-    {
-      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
@@ -42,5 +47,8 @@
         }
       ]
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 } 

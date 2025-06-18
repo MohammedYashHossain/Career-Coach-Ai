@@ -92,21 +92,26 @@ function analyzeResume(text, career) {
 }
 
 // --- Backend Integration for Resume Analysis ---
-const BACKEND_URL = "http://localhost:3001/analyze"; // Change if deploying backend elsewhere
+const BACKEND_URL = "/api/analyze";
 
 document.getElementById("resume-form").addEventListener("submit", async function(e) {
   e.preventDefault();
   const career = document.getElementById("career").value;
   const file = document.getElementById("resume").files[0];
   const output = document.getElementById("analysis-output");
+  const submitButton = document.querySelector('button[type="submit"]');
+  
   output.innerHTML = "<em>Analyzing resume...</em>";
+  submitButton.disabled = true;
 
   if (!file) {
     output.innerHTML = "<span style='color:red'>Please upload a resume file.</span>";
+    submitButton.disabled = false;
     return;
   }
   if (!career) {
     output.innerHTML = "<span style='color:red'>Please select a career field.</span>";
+    submitButton.disabled = false;
     return;
   }
 
@@ -119,11 +124,12 @@ document.getElementById("resume-form").addEventListener("submit", async function
       method: "POST",
       body: formData
     });
+    
     if (!response.ok) {
       const err = await response.json();
-      output.innerHTML = `<span style='color:red'>${err.error || 'Failed to analyze resume.'}</span>`;
-      return;
+      throw new Error(err.error || 'Failed to analyze resume.');
     }
+    
     const analysis = await response.json();
     output.innerHTML = `<h2>Resume Analysis</h2>
       <p><strong>Career Field:</strong> ${career}</p>
@@ -133,6 +139,8 @@ document.getElementById("resume-form").addEventListener("submit", async function
       <ul>${analysis.suggestions.map(s => `<li>${s}</li>`).join("")}</ul>
       <details style='margin-top:1em;'><summary>Show Extracted Resume Text</summary><pre style='white-space:pre-wrap;font-size:0.95em;'>${analysis.text.replace(/</g, "&lt;")}</pre></details>`;
   } catch (err) {
-    output.innerHTML = `<span style='color:red'>Could not connect to backend. Please try again later.</span>`;
+    output.innerHTML = `<span style='color:red'>Error: ${err.message || 'Could not connect to backend. Please try again later.'}</span>`;
+  } finally {
+    submitButton.disabled = false;
   }
 }); 
