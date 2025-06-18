@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CareerCoach AI - Resume Review</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="resume-review.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
+  <div id="particles-js"></div>
   <div class="card">
     <h1>📄 Resume Review</h1>
     <form id="resume-form">
@@ -23,8 +26,8 @@
         <option>Beauty & Fashion</option>
         <option>Engineering</option>
       </select>
-      <label for="resume">Upload your resume (.pdf or .docx):</label>
-      <input type="file" id="resume" accept=".pdf,.docx" required />
+      <label for="resume">Upload your resume (.pdf, .docx, or .txt):</label>
+      <input type="file" id="resume" accept=".pdf,.docx,.txt" required />
       <button type="submit">Analyze Resume</button>
     </form>
     <div id="analysis-output"></div>
