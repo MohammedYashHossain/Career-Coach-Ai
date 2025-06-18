@@ -1,68 +1,96 @@
+// Smart advice rules for Law
+const lawAdviceRules = [
+  {
+    interest: "Corporate Law",
+    experience: "0",
+    goal: "Get a legal internship",
+    advice: [
+      "Seek shadowing or volunteer opportunities at local firms.",
+      "Join your school's pre-law society.",
+      "Attend law-related networking events."
+    ]
+  },
+  {
+    interest: "Criminal Law",
+    experience: "2",
+    goal: "Network with legal professionals",
+    advice: [
+      "Reach out to alumni working in criminal law.",
+      "Attend bar association events.",
+      "Participate in mock trial or legal clinics."
+    ]
+  },
+  // ... more rules ...
+];
+
+function getLawAdvice(interest, experience, goal) {
+  const rule = lawAdviceRules.find(r => r.interest === interest && r.experience === experience && r.goal === goal);
+  if (rule) {
+    return rule.advice.join("\n- ");
+  }
+  return "Keep building your legal skills and seek mentorship from professionals in your field.";
+}
+
 document.getElementById("law-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-  
-    const interest = document.getElementById("interest").value;
-    const prep = document.getElementById("prep").value;
-    const experience = document.getElementById("experience").value;
-    const goal = document.getElementById("goal").value;
-  
-    const report = `
-  Field: ${interest}
-  Preparation: ${prep}
-  Experience: ${experience === "0" ? "None" : experience === "1" ? "Internship/shadowing" : "Formal legal experience"}
-  Goal: ${goal}
-  
-  ⚖️ Recommendations:
-  - ${
-      experience === "0"
-        ? "Start by seeking shadowing or volunteer opportunities at local firms or courts."
-        : "Build on your experience by targeting internships or mentorships in ${interest}."
-    }
-  - If you're pre-law or studying for the LSAT, focus on maintaining a strong GPA and taking analytical writing and philosophy courses.
-  - Join legal clubs, debate teams, or mock trial to build skills and networks.
-  - For law students, look into journals, clinics, and externships aligned with ${interest}.
-  `;
-  
-    document.getElementById("report-output").innerText = report;
+  e.preventDefault();
+
+  const interest = document.getElementById("interest").value;
+  const prep = document.getElementById("prep").value;
+  const experience = document.getElementById("experience").value;
+  const goal = document.getElementById("goal").value;
+
+  const advice = getLawAdvice(interest, experience, goal);
+
+  const report = `Field: ${interest}\nPreparation: ${prep}\nExperience: ${experience}\nGoal: ${goal}\n\n⚖️ Recommendations:\n- ${advice}`;
+
+  document.getElementById("report-output").innerText = report;
+});
+
+// Resume Review Placeholder
+const resumeBtn = document.getElementById("resumeBtn");
+if (resumeBtn) {
+  resumeBtn.addEventListener("click", function() {
+    alert("Resume Review coming soon! You'll be able to upload your resume for instant feedback.");
   });
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5 },
-        size: { value: 3, random: true },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#ffffff",
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 2,
-          direction: "none",
-          random: false,
-          straight: false,
-          out_mode: "out",
-          bounce: false
-        }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 80, density: { enable: true, value_area: 800 } },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5 },
+      size: { value: 3, random: true },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#ffffff",
+        opacity: 0.4,
+        width: 1
       },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: true, mode: "push" },
-          resize: true
-        },
-        modes: {
-          repulse: { distance: 200 },
-          push: { particles_nb: 4 }
-        }
+      move: {
+        enable: true,
+        speed: 2,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        bounce: false
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: { enable: true, mode: "repulse" },
+        onclick: { enable: true, mode: "push" },
+        resize: true
       },
-      retina_detect: true
-    });
+      modes: {
+        repulse: { distance: 200 },
+        push: { particles_nb: 4 }
+      }
+    },
+    retina_detect: true
   });
+});

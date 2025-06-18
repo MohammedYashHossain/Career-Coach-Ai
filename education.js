@@ -1,3 +1,36 @@
+// Smart advice rules for Education
+const educationAdviceRules = [
+  {
+    role: "Elementary School Teacher",
+    experience: "0",
+    goal: "Apply to teaching positions",
+    advice: [
+      "Gain classroom experience by volunteering or substitute teaching.",
+      "Prepare a teaching portfolio with lesson plans and student feedback.",
+      "Network with local schools and attend job fairs."
+    ]
+  },
+  {
+    role: "College Professor",
+    experience: "2",
+    goal: "Apply to master's/PhD programs",
+    advice: [
+      "Highlight your research and teaching experience in your application.",
+      "Request recommendation letters from faculty.",
+      "Prepare a statement of purpose tailored to your field."
+    ]
+  },
+  // ... more rules ...
+];
+
+function getEducationAdvice(role, experience, goal) {
+  const rule = educationAdviceRules.find(r => r.role === role && r.experience === experience && r.goal === goal);
+  if (rule) {
+    return rule.advice.join("\n- ");
+  }
+  return "Keep building your teaching skills and seek mentorship from experienced educators.";
+}
+
 document.getElementById("education-form").addEventListener("submit", function(e) {
     e.preventDefault();
   
@@ -6,6 +39,8 @@ document.getElementById("education-form").addEventListener("submit", function(e)
     const subjects = document.getElementById("subjects").value;
     const goal = document.getElementById("goal").value;
   
+    const advice = getEducationAdvice(role, experience, goal);
+  
     const report = `
   Role: ${role}
   Experience: ${experience === "0" ? "None" : experience === "1" ? "Some tutoring/volunteering" : "Extensive formal experience"}
@@ -13,11 +48,7 @@ document.getElementById("education-form").addEventListener("submit", function(e)
   Short-term Goal: ${goal}
   
   📚 Recommendations:
-  - ${
-      experience === "0"
-        ? "Seek opportunities to tutor, volunteer, or assist in classrooms."
-        : "Document your teaching or tutoring experience clearly in your resume."
-    }
+  - ${advice}
   - Align your coursework and experience with state certification or advanced degree requirements.
   - Highlight your subject passion and pedagogy knowledge in personal statements or cover letters.
   - Join education-related orgs like NEA or student teaching networks.
@@ -66,3 +97,11 @@ document.getElementById("education-form").addEventListener("submit", function(e)
       retina_detect: true
     });
   });
+
+// Resume Review Placeholder
+const resumeBtn = document.getElementById("resumeBtn");
+if (resumeBtn) {
+  resumeBtn.addEventListener("click", function() {
+    alert("Resume Review coming soon! You'll be able to upload your resume for instant feedback.");
+  });
+}

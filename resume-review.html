@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerCoach AI - Resume Review</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>📄 Resume Review</h1>
+    <form id="resume-form">
+      <label for="career">Select your career field:</label>
+      <select id="career" required>
+        <option value="">--Choose--</option>
+        <option>Tech</option>
+        <option>Business</option>
+        <option>Healthcare</option>
+        <option>Education</option>
+        <option>Media/Entertainment</option>
+        <option>Law</option>
+        <option>Government/Public Service</option>
+        <option>Beauty & Fashion</option>
+        <option>Engineering</option>
+      </select>
+      <label for="resume">Upload your resume (.pdf or .docx):</label>
+      <input type="file" id="resume" accept=".pdf,.docx" required />
+      <button type="submit">Analyze Resume</button>
+    </form>
+    <div id="analysis-output"></div>
+  </div>
+  <script src="resume-review.js"></script>
+</body>
+</html> 
