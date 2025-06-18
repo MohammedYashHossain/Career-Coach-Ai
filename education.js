@@ -102,6 +102,6 @@ document.getElementById("education-form").addEventListener("submit", function(e)
 const resumeBtn = document.getElementById("resumeBtn");
 if (resumeBtn) {
   resumeBtn.addEventListener("click", function() {
-    alert("Resume Review coming soon! You'll be able to upload your resume for instant feedback.");
+    window.location.href = "resume-review.html";
   });
 }
