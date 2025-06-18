@@ -92,25 +92,29 @@ function analyzeResume(text, career) {
 }
 
 // --- Backend Integration for Resume Analysis ---
-const BACKEND_URL = "/api/analyze";
+const BACKEND_URL = window.location.origin + "/api/analyze";
 
 document.getElementById("resume-form").addEventListener("submit", async function(e) {
   e.preventDefault();
   const career = document.getElementById("career").value;
   const file = document.getElementById("resume").files[0];
   const output = document.getElementById("analysis-output");
+  const loading = document.getElementById("loading");
   const submitButton = document.querySelector('button[type="submit"]');
   
-  output.innerHTML = "<em>Analyzing resume...</em>";
+  output.innerHTML = "";
+  loading.style.display = "flex";
   submitButton.disabled = true;
 
   if (!file) {
     output.innerHTML = "<span style='color:red'>Please upload a resume file.</span>";
+    loading.style.display = "none";
     submitButton.disabled = false;
     return;
   }
   if (!career) {
     output.innerHTML = "<span style='color:red'>Please select a career field.</span>";
+    loading.style.display = "none";
     submitButton.disabled = false;
     return;
   }
@@ -126,7 +130,7 @@ document.getElementById("resume-form").addEventListener("submit", async function
     });
     
     if (!response.ok) {
-      const err = await response.json();
+      const err = await response.json().catch(() => ({ error: 'Server error occurred' }));
       throw new Error(err.error || 'Failed to analyze resume.');
     }
     
@@ -139,8 +143,10 @@ document.getElementById("resume-form").addEventListener("submit", async function
       <ul>${analysis.suggestions.map(s => `<li>${s}</li>`).join("")}</ul>
       <details style='margin-top:1em;'><summary>Show Extracted Resume Text</summary><pre style='white-space:pre-wrap;font-size:0.95em;'>${analysis.text.replace(/</g, "&lt;")}</pre></details>`;
   } catch (err) {
+    console.error('Resume analysis error:', err);
     output.innerHTML = `<span style='color:red'>Error: ${err.message || 'Could not connect to backend. Please try again later.'}</span>`;
   } finally {
+    loading.style.display = "none";
     submitButton.disabled = false;
   }
 }); 

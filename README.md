@@ -1,57 +1,86 @@
-# CareerCoach AI Resume Analysis Backend
+# CareerCoach AI
 
-This is a Node.js backend for analyzing resumes (PDF, DOCX, TXT) and scoring them based on the user's selected career field. It is designed to work with the CareerCoach AI frontend.
+A personalized career guidance platform that helps users prepare for their chosen career path and analyze their resumes.
 
 ## Features
-- Accepts resume uploads via `/analyze` endpoint (PDF, DOCX, TXT)
-- Extracts text using `pdf-parse` (PDF) and `mammoth` (DOCX)
-- Analyzes for career-specific keywords and standard resume sections
-- Returns a score, keyword/section counts, and actionable suggestions
+
+- Career path guidance for multiple industries
+- Resume analysis and scoring
+- Industry-specific keyword matching
+- Detailed feedback and suggestions
+- Support for PDF, DOCX, and TXT resume formats
+
+## Tech Stack
+
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js, Express
+- Resume Parsing: pdf-parse, mammoth
+- Deployment: Vercel
+
+## Project Structure
+
+```
+/
+├── index.html              # Main landing page
+├── resume-review.html      # Resume analysis page
+├── style.css              # Main styles
+├── resume-review.css      # Resume analysis styles
+├── script.js              # Main JavaScript
+├── resume-review.js       # Resume analysis logic
+├── [industry].html        # Industry-specific pages
+├── [industry].css         # Industry-specific styles
+├── [industry].js          # Industry-specific logic
+├── backend/               # Backend server
+│   ├── app.js            # Express server and API
+│   └── package.json      # Backend dependencies
+└── package.json          # Root package.json
+```
 
 ## Setup
 
-1. **Install dependencies**
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-```
-cd backend
-npm install
-```
+## API Endpoints
 
-2. **Run the server**
+### POST /api/analyze
+Analyzes a resume and returns a score and suggestions.
 
-```
-npm start
-```
+**Request:**
+- Form data with:
+  - `resume`: Resume file (PDF, DOCX, or TXT)
+  - `career`: Career field (e.g., "Tech", "Business")
 
-The server will run on `http://localhost:3001` by default.
-
-## API Usage
-
-### POST `/analyze`
-- **Form Data:**
-  - `resume` (file): The resume file (.pdf, .docx, or .txt)
-  - `career` (string): The selected career field (e.g., "Tech", "Business", etc.)
-
-- **Response:**
-  - `rating`: Resume score (0-100)
-  - `suggestions`: Array of actionable suggestions
-  - `keywordCount`: Number of relevant keywords found
-  - `sectionCount`: Number of standard sections detected
-  - `text`: Extracted resume text
-
-**Example using curl:**
-
-```
-curl -F "resume=@/path/to/resume.pdf" -F "career=Tech" http://localhost:3001/analyze
+**Response:**
+```json
+{
+  "rating": 85,
+  "suggestions": ["Add more keywords", "Include more sections"],
+  "keywordCount": 12,
+  "sectionCount": 5,
+  "text": "Extracted resume text..."
+}
 ```
 
-## Frontend Integration
-- Update your frontend to POST the file and career to `/analyze` and display the results.
-- For deployment, ensure CORS is handled if frontend and backend are on different domains.
+## Deployment
 
-## Requirements
-- Node.js 16+
+The application is deployed on Vercel. The frontend is served as static files, and the backend runs as serverless functions.
 
----
+## Contributing
 
-**For questions or help, open an issue or contact the maintainer.** 
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+MIT License 
